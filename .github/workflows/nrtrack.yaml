@@ -18,8 +18,7 @@ jobs:
       # This step builds a var with the release tag value to use later    
       - name: run curl
         id: testcases
-        run: |
-
+        run: 
             version=$((${{github.event.inputs.Revisionversion}}+1))
             echo "newversion=$((version))"
             echo "CURLVERSION=$((version))" >> $GITHUB_OUTPUT            
