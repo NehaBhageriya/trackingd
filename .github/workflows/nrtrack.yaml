@@ -1,0 +1,37 @@
+name: Change Tracking Markers File
+  
+on:
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+  release:
+    types: [published]
+
+jobs:
+  newrelic:
+    runs-on: ubuntu-latest
+    name: New Relic
+    steps:
+      # This step builds a var with the release tag value to use later    
+      - name: run curl
+        id: testcases
+        run: |
+
+            version=$((${{github.event.inputs.Revisionversion}}+1))
+            echo "newversion=$((version))"
+            echo "CURLVERSION=$((version))" >> $GITHUB_OUTPUT            
+            curl https://api.newrelic.com/graphql \
+              -H 'Content-Type: application/json' \
+              -H 'API-Key: NRAK-IXMD84CHERKDM7LHK64S7M7D2FE' \
+            '{
+              "deployment": {
+                "changelog": "",
+                "description": "testlog: organisation change success",
+                "revision": "'"$version"'",
+                "user": "neha.bhageriya@cloudeq.com",
+                "entityGuid": "MzY1NTM3MnxBUE18QVBQTElDQVRJT058MTA2NzUyNzk1Nw", 
+
+              }
