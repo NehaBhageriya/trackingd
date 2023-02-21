@@ -2,18 +2,18 @@ name: Change Tracking Markers File
   
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  # push:
+  #   branches: [ "main" ]
+  # pull_request:
+  #   branches: [ "main" ]
   workflow_dispatch:
-  release:
-    types: [published]
     inputs:
       Revisionversion:
         description: 'CURL Revision version'
         required: true
-        default: '1'   
+        default: '1'  
+  release:
+    types: [published] 
 
 jobs:
   newrelic:
