@@ -32,4 +32,4 @@ jobs:
               'https://api.newrelic.com/graphql' \
               -H 'Content-Type: application/json' \
               -H 'API-Key: NRAK-IXMD84CHERKDM7LHK64S7M7D2FE' \
-              --data-binary '{"query":"mutation {changeTrackingCreateDeployment(deployment: {version: \"'"$version"'\", entityGuid: \"MzY1NTM3MnxBUE18QVBQTElDQVRJT058MTAwNTIwODUxOA\", user: \"neha.bhageriya@cloudeq.com\", description: \"create a new marker\", deploymentType: ROLLING,}) {\n    deploymentId\n    entityGuid\n  user\n    description\n    deploymentType\n    }\n}\n", "variables":""}'
+              --data-binary '{"query":"mutation {changeTrackingCreateDeployment(deployment: {version: \"'"$version"'\", entityGuid: \"MzY1NTM3MnxBUE18QVBQTElDQVRJT058MTAwNTIwODUxOA\", user: \"neha.bhageriya@cloudeq.com\", description: \"create a new marker\", deploymentType: ROLLING,}) {\n    deploymentId\n    entityGuid\n    user\n    description\n    deploymentType\n    }\n}\n", "variables":""}'
